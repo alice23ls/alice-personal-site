@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Projects by Alice Shang Xu, including full-stack engineering and data-science analysis."
+  />
+  <title>Alice Shang Xu | Projects</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="site-body projects-page" data-page="projects">
+  <div class="site-drawer-backdrop" data-drawer-close></div>
+  <aside class="site-drawer" id="site-drawer" aria-hidden="true">
+    <div class="drawer-top">
+      <a class="drawer-brand" href="index.html">
+        <span class="drawer-brand-mark">AX</span>
+        <span class="drawer-brand-copy">
+          <strong>Alice Shang Xu</strong>
+          <small>thinking through things by building them</small>
+        </span>
+      </a>
+      <button class="drawer-close" type="button" data-drawer-close aria-label="Close sidebar">&times;</button>
+    </div>
+
+    <section class="drawer-block">
+      <p class="drawer-label">At A Glance</p>
+      <div class="drawer-snapshot-grid">
+        <article class="drawer-snapshot">
+          <strong>School</strong>
+          <span>UC Santa Barbara</span>
+        </article>
+        <article class="drawer-snapshot">
+          <strong>Studying</strong>
+          <span>Statistics &amp; Data Science + Economics</span>
+        </article>
+        <article class="drawer-snapshot">
+          <strong>Lately</strong>
+          <span>software systems, public-facing analysis, teaching, and campus work</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="drawer-block">
+      <p class="drawer-label">Contact</p>
+      <div class="drawer-contact-list">
+        <a class="drawer-contact" href="mailto:lishixu23@gmail.com">
+          <strong>Email</strong>
+          <small>lishixu23@gmail.com</small>
+        </a>
+        <a class="drawer-contact" href="https://linkedin.com/in/alice-xu-154509290" target="_blank" rel="noopener">
+          <strong>LinkedIn</strong>
+          <small>linkedin.com/in/alice-xu-154509290</small>
+        </a>
+        <a class="drawer-contact" href="https://github.com/alice23ls" target="_blank" rel="noopener">
+          <strong>GitHub</strong>
+          <small>github.com/alice23ls</small>
+        </a>
+      </div>
+    </section>
+
+    <div class="drawer-block drawer-actions">
+      <p class="drawer-label">Fast Route</p>
+      <a class="drawer-button" href="Alice%20Shang%20Xu_swe_use.pdf" target="_blank" rel="noopener">Open Resume PDF</a>
+      <a class="drawer-button drawer-button-secondary" href="experience.html">Start with Experience</a>
+    </div>
+  </aside>
+
+  <div class="page-frame">
+    <header class="page-topbar">
+      <a class="brand-link" href="index.html">
+        <span class="brand-mark">AX</span>
+        <span class="brand-copy">
+          <strong>Alice Shang Xu</strong>
+        </span>
+      </a>
+
+      <nav class="top-tabs" aria-label="Primary pages">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="experience.html" data-nav="experience">Experience</a>
+        <a href="projects.html" data-nav="projects">Projects</a>
+        <a href="skills.html" data-nav="skills">Skills</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        data-drawer-toggle
+        aria-expanded="false"
+        aria-controls="site-drawer"
+        aria-label="Open sidebar"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-intro-grid">
+        <section class="page-intro compact-intro">
+          <p class="eyebrow">Projects</p>
+          <h1>The work here usually takes one of two forms: building systems or analyzing data</h1>
+          <p class="lede">
+            I keep both on the same page because they come from the same instinct: building something useful,
+            understanding how it works, and making the result easier to use or explain.
+          </p>
+        </section>
+
+        <div class="intro-aside">
+          <article class="micro-card">
+            <p class="card-eyebrow">Engineering Side</p>
+            <h3>Systems, APIs, search, and deployment</h3>
+            <p>These projects are where backend structure, frontend flow, performance, and cloud deployment come together.</p>
+          </article>
+
+          <article class="micro-card">
+            <p class="card-eyebrow">Analysis Side</p>
+            <h3>Modeling with interpretation</h3>
+            <p>The data-heavy work here is less about isolated notebooks and more about turning analysis into a report someone else can actually read.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card-grid">
+        <article class="project-card span-6">
+          <div class="card-topline">
+            <div>
+              <p class="card-eyebrow">Engineering Build</p>
+              <h3>OnlineOrder</h3>
+              <p class="meta-line">Spring Boot Food Ordering Web Application</p>
+            </div>
+            <span class="date-chip">Full-stack</span>
+          </div>
+          <ul>
+            <li>Built 8+ CRUD REST APIs for registration, menu search, ordering, and checkout flows.</li>
+            <li>Integrated Spring Data JDBC with PostgreSQL on AWS RDS to handle 300+ concurrent database transactions.</li>
+            <li>Developed a responsive React and Ant Design frontend with debounce-based search to reduce redundant client work.</li>
+            <li>Containerized the application and deployed it with AWS ECR and AWS App Runner.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Spring Boot</span>
+            <span class="tag">React</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">AWS</span>
+          </div>
+        </article>
+
+        <article class="project-card span-6">
+          <div class="card-topline">
+            <div>
+              <p class="card-eyebrow">Engineering Build</p>
+              <h3>SocialAI</h3>
+              <p class="meta-line">AI-Based Social Network</p>
+            </div>
+            <span class="date-chip">Distributed systems</span>
+          </div>
+          <ul>
+            <li>Built a React frontend with Go microservices deployed on Google App Engine and integrated DALL-E 3 for generated content.</li>
+            <li>Engineered Elasticsearch for real-time search across 20,000+ posts with sub-second response times.</li>
+            <li>Designed JWT-based APIs serving 400+ concurrent users with p95 latency under 200ms.</li>
+            <li>Implemented Redis caching that reduced database load by 60% and improved feed rendering from 1.2s to 400ms.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Go</span>
+            <span class="tag">React</span>
+            <span class="tag">Elasticsearch</span>
+            <span class="tag">Redis</span>
+          </div>
+        </article>
+
+        <article class="project-card span-6">
+          <div class="card-topline">
+            <div>
+              <p class="card-eyebrow">Data &amp; Analysis</p>
+              <h3>Clinical Risk Prediction Pipeline</h3>
+              <p class="meta-line">Heart failure prediction in R</p>
+            </div>
+            <span class="date-chip">R + ML</span>
+          </div>
+          <ul>
+            <li>Built an end-to-end machine learning pipeline in R for heart failure risk prediction, including cleaning, feature engineering, training, and evaluation.</li>
+            <li>Benchmarked multiple classifiers and reached about 90% prediction accuracy with KNN.</li>
+            <li>Automated evaluation steps to improve reproducibility and streamline iteration.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">R</span>
+            <span class="tag">KNN</span>
+            <span class="tag">cross-validation</span>
+            <span class="tag">clinical data</span>
+          </div>
+          <div class="project-link-row">
+            <a class="button button-secondary" href="https://alice33-stu.github.io/heart-failure-prediction-project/final_131.html" target="_blank" rel="noopener">View Live Analysis</a>
+          </div>
+        </article>
+
+        <article class="project-card span-6">
+          <div class="card-topline">
+            <div>
+              <p class="card-eyebrow">Data &amp; Analysis</p>
+              <h3>Fertility, Infant Mortality, and Socioeconomic Disparities</h3>
+              <p class="meta-line">Public-facing analysis report</p>
+            </div>
+            <span class="date-chip">PCA + regression</span>
+          </div>
+          <ul>
+            <li>Analyzed U.S. fertility and infant mortality data across states using PCA, regression modeling, and fixed-effects prediction.</li>
+            <li>Examined how race, education, marital status, and Medicaid coverage relate to differences in outcomes.</li>
+            <li>Built a report that connects quantitative work to policy and health-equity questions.</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">R</span>
+            <span class="tag">PCA</span>
+            <span class="tag">fixed effects</span>
+            <span class="tag">public health data</span>
+          </div>
+          <div class="project-link-row">
+            <a class="button button-secondary" href="https://alice33-stu.github.io/infant_fertility_mortality_analysis/100-final.html" target="_blank" rel="noopener">View Live Analysis</a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="site.js"></script>
+</body>
+</html>

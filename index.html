@@ -1,267 +1,225 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Alice Shang Xu is a software engineer and data-focused builder at UC Santa Barbara, creating full-stack products, automation systems, and analytics workflows."
+    content="Alice Shang Xu's personal site: software projects, data work, campus experience, and a more personal archive of recent years at UC Santa Barbara."
   />
-  <title>Alice Shang Xu | Software Engineer</title>
+  <title>Alice Shang Xu | Home</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div class="page-shell">
-    <header class="site-header">
-      <div class="topbar">
-        <a class="brand" href="#top">Alice Shang Xu</a>
-        <nav class="nav-links" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-        </nav>
+<body class="site-body landing-page has-intro" data-page="home">
+  <div class="intro-screen" data-intro>
+    <div class="intro-panel">
+      <p class="intro-kicker">Welcome to my page</p>
+      <h1 class="intro-name">Alice Shang Xu</h1>
+      <p class="intro-line">software, data, research, and the campus chapters in between</p>
+    </div>
+  </div>
+
+  <div class="site-drawer-backdrop" data-drawer-close></div>
+  <aside class="site-drawer" id="site-drawer" aria-hidden="true">
+    <div class="drawer-top">
+      <a class="drawer-brand" href="index.html">
+        <span class="drawer-brand-mark">AX</span>
+        <span class="drawer-brand-copy">
+          <strong>Alice Shang Xu</strong>
+          <small>thinking through things by building them</small>
+        </span>
+      </a>
+      <button class="drawer-close" type="button" data-drawer-close aria-label="Close sidebar">&times;</button>
+    </div>
+
+    <section class="drawer-block">
+      <p class="drawer-label">At A Glance</p>
+      <div class="drawer-snapshot-grid">
+        <article class="drawer-snapshot">
+          <strong>School</strong>
+          <span>UC Santa Barbara</span>
+        </article>
+        <article class="drawer-snapshot">
+          <strong>Studying</strong>
+          <span>Statistics &amp; Data Science + Economics</span>
+        </article>
+        <article class="drawer-snapshot">
+          <strong>Lately</strong>
+          <span>software systems, public-facing analysis, teaching, and campus work</span>
+        </article>
       </div>
+    </section>
 
-      <section class="hero" id="top">
-        <div class="hero-copy">
-          <p class="eyebrow">UC Santa Barbara · Statistics & Data Science + Economics</p>
-          <h1>Software engineer with a data backbone and a product mindset.</h1>
-          <p class="lede">
-            I build full-stack applications, automation systems, and analytical tools that turn
-            complex workflows into something fast, usable, and reliable.
-          </p>
-          <div class="hero-actions">
-            <a class="button" href="#projects">View Projects</a>
-            <a class="button button-ghost" href="Alice%20Shang%20Xu_swe_use.pdf" target="_blank" rel="noopener">Open Resume PDF</a>
-          </div>
-          <ul class="quick-facts" aria-label="Highlights">
-            <li>Expected graduation: June 2026</li>
-            <li>GPA: 3.84 / 4.0</li>
-            <li>Dean's Honors</li>
-            <li>Santa Barbara, CA</li>
-          </ul>
-        </div>
+    <section class="drawer-block">
+      <p class="drawer-label">Contact</p>
+      <div class="drawer-contact-list">
+        <a class="drawer-contact" href="mailto:lishixu23@gmail.com">
+          <strong>Email</strong>
+          <small>lishixu23@gmail.com</small>
+        </a>
+        <a class="drawer-contact" href="https://linkedin.com/in/alice-xu-154509290" target="_blank" rel="noopener">
+          <strong>LinkedIn</strong>
+          <small>linkedin.com/in/alice-xu-154509290</small>
+        </a>
+        <a class="drawer-contact" href="https://github.com/alice23ls" target="_blank" rel="noopener">
+          <strong>GitHub</strong>
+          <small>github.com/alice23ls</small>
+        </a>
+      </div>
+    </section>
 
-        <aside class="hero-panel" aria-label="Career highlights">
-          <div class="metric-card">
-            <span class="metric">200+</span>
-            <p>equity datasets automated and refreshed during risk analytics internship work</p>
-          </div>
-          <div class="metric-card">
-            <span class="metric">20,000+</span>
-            <p>students reached through public-facing reporting workflows at UCSB Daily Nexus</p>
-          </div>
-          <div class="metric-card">
-            <span class="metric">400ms</span>
-            <p>feed render time achieved after caching improvements in SocialAI</p>
-          </div>
-        </aside>
-      </section>
+    <div class="drawer-block drawer-actions">
+      <p class="drawer-label">Fast Route</p>
+      <a class="drawer-button" href="Alice%20Shang%20Xu_swe_use.pdf" target="_blank" rel="noopener">Open Resume PDF</a>
+      <a class="drawer-button drawer-button-secondary" href="experience.html">Start with Experience</a>
+    </div>
+  </aside>
+
+  <div class="page-frame">
+    <header class="page-topbar">
+      <a class="brand-link" href="index.html">
+        <span class="brand-mark">AX</span>
+        <span class="brand-copy">
+          <strong>Alice Shang Xu</strong>
+        </span>
+      </a>
+
+      <nav class="top-tabs" aria-label="Primary pages">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="experience.html" data-nav="experience">Experience</a>
+        <a href="projects.html" data-nav="projects">Projects</a>
+        <a href="skills.html" data-nav="skills">Skills</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        data-drawer-toggle
+        aria-expanded="false"
+        aria-controls="site-drawer"
+        aria-label="Open sidebar"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
 
-    <main>
-      <section class="section intro" id="about">
-        <div class="section-heading">
-          <p class="section-kicker">About</p>
-          <h2>Building practical systems across software, data, and cloud.</h2>
-        </div>
-        <div class="section-body">
-          <p>
-            I am currently pursuing a B.S. in Statistics & Data Science and a B.A. in Economics at
-            the University of California, Santa Barbara. My work lives at the intersection of backend
-            engineering, applied analytics, and product delivery.
-          </p>
-          <p>
-            Across internships, campus reporting, and independent projects, I have built Spring Boot
-            APIs, React frontends, Go services, R-based analytics pipelines, and Python automation
-            workflows. I care about systems that are clear to maintain, measurable in impact, and
-            thoughtful about performance.
-          </p>
+    <main class="page-shell home-shell">
+      <section class="home-stage home-stage-hero">
+        <div class="home-stage-copy">
+          <p class="eyebrow">Home</p>
+          <h1>Somewhere between engineering, data, and analysis</h1>
+          <p class="home-stage-caption">Software, systems, and analysis with a bias toward clarity.</p>
         </div>
       </section>
 
-      <section class="section education">
-        <div class="section-heading">
-          <p class="section-kicker">Education</p>
-          <h2>University of California, Santa Barbara</h2>
+      <section class="home-stage home-stage-intro">
+        <div class="home-intro-copy" data-scroll-reveal>
+          <p class="section-label">A little context</p>
+          <h2>Who I am, briefly</h2>
         </div>
-        <div class="section-body">
-          <div class="info-grid">
-            <article class="info-card">
-              <h3>Degree</h3>
-              <p>B.S. in Statistics & Data Science, B.A. in Economics</p>
-            </article>
-            <article class="info-card">
-              <h3>Timeline</h3>
-              <p>Sep 2022 - June 2026</p>
-            </article>
-            <article class="info-card">
-              <h3>Relevant Coursework</h3>
-              <p>Data Structures & Algorithms, Machine Learning, Regression Analysis, Probability Theory</p>
-            </article>
+
+        <div class="home-intro-body" data-scroll-reveal>
+          <p class="lede">
+            I&apos;m Alice, a UC Santa Barbara student studying Statistics &amp; Data Science and Economics.
+            Most of the work here grew out of projects, classes, and roles that kept pulling me between
+            engineering, data, and analysis.
+          </p>
+          <div class="action-row">
+            <a class="button button-primary" href="about.html">Start with About</a>
+            <a class="button button-secondary" href="projects.html">See Projects</a>
           </div>
         </div>
       </section>
 
-      <section class="section" id="experience">
-        <div class="section-heading">
-          <p class="section-kicker">Experience</p>
-          <h2>Work shaped by automation, reporting, and data storytelling.</h2>
+      <section class="home-stage home-stage-spotlight">
+        <div class="home-spotlight-rail" data-scroll-reveal>
+          <p class="section-label">What Keeps Showing Up</p>
+          <h2>The same mix tends to come back</h2>
+          <p>
+            Across projects, internships, and campus roles, I keep ending up in work that asks for structure,
+            analysis, and communication at the same time.
+          </p>
         </div>
-        <div class="timeline">
-          <article class="timeline-card">
-            <div class="timeline-top">
-              <div>
-                <h3>Software Automation Intern, Risk Analytics</h3>
-                <p class="role-meta">Orient Securities Company Limited · Hong Kong</p>
-              </div>
-              <p class="time">Jun 2024 - Aug 2024</p>
-            </div>
-            <ul>
-              <li>Built Python automation scripts to scrape, clean, and refresh equity data for 200+ firms, reducing update cycles by 40%.</li>
-              <li>Implemented forecasting and valuation workflows in VBA and Excel for ROI analysis and risk scenario planning for Pop Mart (9992.HK).</li>
-              <li>Standardized IPO risk assessment datasets and generated structured outputs to support repeatable research workflows.</li>
-            </ul>
+
+        <div class="home-spotlight-stack">
+          <article class="stat-card home-layer-card" data-scroll-reveal>
+            <p class="card-eyebrow">Where I Thrive</p>
+            <h3>Engineering, analysis, and communication all at once</h3>
+            <p>
+              The work I enjoy most usually asks for more than one mode at the same time:
+              building something useful, understanding the data underneath it, and explaining the result clearly.
+            </p>
           </article>
 
-          <article class="timeline-card">
-            <div class="timeline-top">
-              <div>
-                <h3>Data Analyst / Developer</h3>
-                <p class="role-meta">UCSB Daily Nexus · Santa Barbara, CA</p>
-              </div>
-              <p class="time">Oct 2024 - Present</p>
-            </div>
-            <ul>
-              <li>Led housing affordability analysis using 10 years of UCSB data with reusable R-based scripts for processing, modeling, and visualization.</li>
-              <li>Developed reporting workflows for public-facing data stories reaching 20,000+ students.</li>
-              <li>Integrated datasets from university stakeholders and organized 5+ interviews to improve reporting quality, context, and technical accuracy.</li>
-            </ul>
+          <article class="stat-card home-layer-card" data-scroll-reveal>
+            <p class="card-eyebrow">Recent Chapters</p>
+            <h3>Software engineering, finance, school</h3>
+            <p>
+              Most of the recent work here grew out of backend projects, finance-oriented internships,
+              and the classes and campus roles around them.
+            </p>
+          </article>
+
+          <article class="stat-card home-layer-card" data-scroll-reveal>
+            <p class="card-eyebrow">School</p>
+            <h3>University of California, Santa Barbara</h3>
+            <p>
+              Statistics &amp; Data Science + Economics, with coursework that keeps pulling theory back into
+              real projects.
+            </p>
           </article>
         </div>
       </section>
 
-      <section class="section" id="projects">
-        <div class="section-heading">
-          <p class="section-kicker">Projects</p>
-          <h2>Selected systems I have designed and shipped.</h2>
+      <section class="home-stage home-stage-links">
+        <div class="home-links-heading" data-scroll-reveal>
+          <p class="section-label">Explore the rest</p>
         </div>
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-head">
-              <h3>OnlineOrder</h3>
-              <p>Spring Boot food ordering web application</p>
-            </div>
-            <div class="tag-row">
-              <span>Spring Boot</span>
-              <span>React</span>
-              <span>PostgreSQL</span>
-              <span>AWS</span>
-            </div>
-            <ul>
-              <li>Built 8+ CRUD REST APIs supporting registration, menu search, ordering, and checkout flows.</li>
-              <li>Integrated Spring Data JDBC with PostgreSQL on AWS RDS to handle 300+ concurrent database transactions.</li>
-              <li>Developed a responsive React and Ant Design frontend with debounce-based search, reducing client-side CPU usage by about 25%.</li>
-              <li>Containerized the app and deployed it with AWS ECR and AWS App Runner.</li>
-            </ul>
-          </article>
 
-          <article class="project-card">
-            <div class="project-head">
-              <h3>SocialAI</h3>
-              <p>AI-based social network with search, feed generation, and caching</p>
-            </div>
-            <div class="tag-row">
-              <span>React</span>
-              <span>Go</span>
-              <span>Elasticsearch</span>
-              <span>Redis</span>
-            </div>
-            <ul>
-              <li>Built a React frontend with Go microservices deployed on Google App Engine and integrated the DALL·E 3 API for generated content.</li>
-              <li>Engineered Elasticsearch on Google Compute Engine for real-time search across 20,000+ posts with sub-second response times.</li>
-              <li>Designed JWT-based REST APIs serving 400+ concurrent users with p95 latency under 200ms.</li>
-              <li>Implemented Redis caching that reduced database load by 60% and improved feed rendering from 1.2s to 400ms.</li>
-            </ul>
-          </article>
+        <div class="story-grid" aria-label="Site pages">
+          <a class="story-card story-card-half" href="about.html" data-scroll-reveal>
+            <span class="route-index">01</span>
+            <h3>About</h3>
+            <p>School, background, and the mix of interests that sits behind the rest of the work.</p>
+            <span class="route-arrow">Open page</span>
+          </a>
 
-          <article class="project-card">
-            <div class="project-head">
-              <h3>Clinical Risk Prediction Pipeline</h3>
-              <p>End-to-end machine learning workflow for heart failure risk prediction</p>
-            </div>
-            <div class="tag-row">
-              <span>R</span>
-              <span>Machine Learning</span>
-              <span>KNN</span>
-              <span>Evaluation</span>
-            </div>
-            <ul>
-              <li>Built a full pipeline in R covering data cleaning, feature engineering, model training, and evaluation.</li>
-              <li>Reached 90% prediction accuracy with KNN while automating evaluation steps for easier iteration and reproducibility.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+          <a class="story-card story-card-half" href="experience.html" data-scroll-reveal>
+            <span class="route-index">02</span>
+            <h3>Experience</h3>
+            <p>Internships first, then the campus roles that shaped how I work with people, data, and deadlines.</p>
+            <span class="route-arrow">Open page</span>
+          </a>
 
-      <section class="section" id="skills">
-        <div class="section-heading">
-          <p class="section-kicker">Skills</p>
-          <h2>Tools I reach for across engineering and analytics work.</h2>
-        </div>
-        <div class="skills-layout">
-          <article class="skill-card">
-            <h3>Languages</h3>
-            <p>Java, Python, SQL, R, Go</p>
-          </article>
-          <article class="skill-card">
-            <h3>Frameworks & Web</h3>
-            <p>Spring Boot, React, Spring Security, React Router, REST APIs, JWT, Ant Design</p>
-          </article>
-          <article class="skill-card">
-            <h3>Databases & Cloud</h3>
-            <p>PostgreSQL, Spring Data JDBC, AWS RDS, AWS ECR, AWS App Runner, Google Cloud, Elasticsearch</p>
-          </article>
-          <article class="skill-card">
-            <h3>Libraries & Workflow</h3>
-            <p>Git, Docker, pandas, NumPy, scikit-learn, Jupyter, Quarto</p>
-          </article>
-        </div>
-      </section>
+          <a class="story-card story-card-third" href="projects.html" data-scroll-reveal>
+            <span class="route-index">03</span>
+            <h3>Projects</h3>
+            <p>Full-stack applications, machine-learning work, and public-facing analysis projects.</p>
+            <span class="route-arrow">Open page</span>
+          </a>
 
-      <section class="section resume-callout">
-        <div class="section-heading">
-          <p class="section-kicker">Resume</p>
-          <h2>Prefer the one-page version?</h2>
-        </div>
-        <div class="resume-strip">
-          <p>Download the original PDF resume for applications, forwarding, or quick review.</p>
-          <div class="hero-actions">
-            <a class="button" href="Alice%20Shang%20Xu_swe_use.pdf" target="_blank" rel="noopener">Open PDF</a>
-            <a class="button button-ghost" href="Alice%20Shang%20Xu_swe_use.pdf" download>Download PDF</a>
-          </div>
+          <a class="story-card story-card-third" href="skills.html" data-scroll-reveal>
+            <span class="route-index">04</span>
+            <h3>Skills</h3>
+            <p>Languages, tools, and the workflows I keep returning to across engineering and analysis.</p>
+            <span class="route-arrow">Open page</span>
+          </a>
+
+          <a class="story-card story-card-third" href="contact.html" data-scroll-reveal>
+            <span class="route-index">05</span>
+            <h3>Contact</h3>
+            <p>Email, LinkedIn, GitHub, resume, and the fastest ways to reach me.</p>
+            <span class="route-arrow">Open page</span>
+          </a>
         </div>
       </section>
     </main>
-
-    <footer class="site-footer" id="contact">
-      <div>
-        <p class="section-kicker">Contact</p>
-        <h2>Let's connect.</h2>
-      </div>
-      <div class="contact-list">
-        <a href="mailto:lishixu23@gmail.com">lishixu23@gmail.com</a>
-        <a href="https://github.com/alice23ls" target="_blank" rel="noopener">github.com/alice23ls</a>
-        <a href="https://linkedin.com/in/alice-xu-154509290" target="_blank" rel="noopener">linkedin.com/in/alice-xu-154509290</a>
-      </div>
-      <p class="footer-note">© <span id="year"></span> Alice Shang Xu</p>
-    </footer>
   </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>
