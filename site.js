@@ -28,11 +28,13 @@ const pageRevealTargets = Array.from(document.querySelectorAll(pageRevealSelecto
 const scrollRevealTargets = Array.from(document.querySelectorAll("[data-scroll-reveal]"));
 const homeHero = document.querySelector(".home-stage-hero");
 const skillGroupCards = Array.from(document.querySelectorAll(".skills-page [data-skill-group]"));
+const contactGroupItems = Array.from(document.querySelectorAll(".contact-page [data-contact-group]"));
 const intro = document.querySelector("[data-intro]");
 let introTimerId = null;
 let revealTimerId = null;
 let scrollRevealObserver = null;
 let skillGroupObserver = null;
+let contactGroupObserver = null;
 let homeHeroMotionTicking = false;
 
 pageRevealTargets.forEach((element, index) => {
@@ -67,6 +69,21 @@ skillGroupCards.forEach((card, cardIndex) => {
     pill.style.setProperty("--pill-origin-x", `${originX}px`);
     pill.style.setProperty("--pill-origin-y", `${originY}px`);
   });
+});
+
+const contactItemOrigins = [
+  [-18, 18],
+  [18, 18],
+  [-14, 16],
+  [14, 16],
+];
+
+contactGroupItems.forEach((item, itemIndex) => {
+  const [originX, originY] = contactItemOrigins[itemIndex % contactItemOrigins.length];
+
+  item.style.setProperty("--contact-index", String(itemIndex));
+  item.style.setProperty("--contact-origin-x", `${originX}px`);
+  item.style.setProperty("--contact-origin-y", `${originY}px`);
 });
 
 function schedulePageReveal({ restart = false, delay = 70 } = {}) {
@@ -175,6 +192,50 @@ function initializeSkillGroups() {
   });
 }
 
+function initializeContactGroups() {
+  if (!contactGroupItems.length) {
+    return;
+  }
+
+  if (contactGroupObserver) {
+    contactGroupObserver.disconnect();
+  }
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    body.classList.remove("contact-enhanced");
+    contactGroupItems.forEach((item) => {
+      item.classList.add("is-grouped");
+    });
+    return;
+  }
+
+  body.classList.add("contact-enhanced");
+  contactGroupItems.forEach((item) => {
+    item.classList.remove("is-grouped");
+  });
+
+  contactGroupObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-grouped");
+        contactGroupObserver.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.3,
+      rootMargin: "0px 0px -8% 0px",
+    },
+  );
+
+  contactGroupItems.forEach((item) => {
+    contactGroupObserver.observe(item);
+  });
+}
+
 function updateHomeHeroMotion() {
   if (!homeHero || prefersReducedMotion) {
     return;
@@ -241,6 +302,7 @@ document.querySelectorAll("[data-nav]").forEach((link) => {
 window.addEventListener("pageshow", (event) => {
   initializeScrollReveals();
   initializeSkillGroups();
+  initializeContactGroups();
   requestHomeHeroMotionUpdate();
 
   if (intro) {
@@ -279,6 +341,10 @@ window.addEventListener("pagehide", () => {
 
   if (skillGroupObserver) {
     skillGroupObserver.disconnect();
+  }
+
+  if (contactGroupObserver) {
+    contactGroupObserver.disconnect();
   }
 });
 

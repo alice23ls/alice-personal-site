@@ -513,10 +513,41 @@ body.drawer-open .site-drawer-backdrop {
   line-height: 0.96;
 }
 
+.hero-line {
+  white-space: nowrap;
+}
+
 .compact-intro h1 {
   max-width: none;
   font-size: clamp(2.2rem, 4vw, 3.7rem);
   line-height: 1;
+}
+
+.about-page .compact-intro h1,
+.projects-page .compact-intro h1,
+.skills-page .compact-intro h1,
+.contact-page .compact-intro h1 {
+  max-width: 9.5ch;
+  text-wrap: balance;
+}
+
+.experience-page .compact-intro h1 {
+  max-width: 11ch;
+  text-wrap: balance;
+}
+
+.skills-page .compact-intro h1 {
+  max-width: 12ch;
+}
+
+.contact-page .compact-intro h1 {
+  max-width: none;
+  white-space: nowrap;
+}
+
+.projects-page .compact-intro h1 {
+  max-width: none;
+  text-wrap: pretty;
 }
 
 .lede,
@@ -544,6 +575,14 @@ body.drawer-open .site-drawer-backdrop {
   grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
   gap: 18px;
   align-items: stretch;
+}
+
+.experience-page .page-intro-grid {
+  grid-template-columns: minmax(0, 1.14fr) minmax(300px, 0.86fr);
+}
+
+.projects-page .page-intro-grid {
+  grid-template-columns: minmax(0, 1.16fr) minmax(300px, 0.84fr);
 }
 
 .page-intro-grid .page-intro,
@@ -576,6 +615,22 @@ body.drawer-open .site-drawer-backdrop {
   display: grid;
   gap: 18px;
   grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.experience-page .intro-aside,
+.projects-page .intro-aside {
+  grid-template-rows: repeat(2, minmax(170px, 1fr));
+}
+
+.experience-page .intro-aside .micro-card,
+.projects-page .intro-aside .micro-card {
+  display: grid;
+  align-content: start;
+}
+
+.experience-page .intro-aside .mini-list {
+  margin-top: 18px;
+  gap: 14px;
 }
 
 .intro-aside-single {
@@ -730,6 +785,7 @@ body.drawer-open .site-drawer-backdrop {
   min-height: clamp(420px, 56svh, 520px);
   display: grid;
   align-content: center;
+  justify-items: center;
   gap: 18px;
   isolation: isolate;
 }
@@ -768,23 +824,27 @@ body.drawer-open .site-drawer-backdrop {
 }
 
 .home-stage-copy {
-  max-width: min(1280px, 100%);
+  width: min(860px, calc(100% - 120px));
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 0;
+  text-align: center;
 }
 
 .home-stage-copy h1 {
   margin: 10px 0 0;
-  max-width: 15.5ch;
-  font-size: clamp(3.15rem, 6.1vw, 5.5rem);
-  line-height: 0.97;
-  letter-spacing: -0.035em;
+  max-width: none;
+  font-size: clamp(3.35rem, 6.8vw, 6rem);
+  line-height: 0.99;
+  letter-spacing: -0.03em;
   text-wrap: balance;
   transform: translateY(calc(var(--hero-progress, 0) * 26px));
 }
 
 .home-stage-caption {
   max-width: 28ch;
-  margin: 14px 0 0;
+  margin: 14px auto 0;
   color: var(--muted);
   font-size: 1rem;
   letter-spacing: 0.01em;
@@ -792,21 +852,58 @@ body.drawer-open .site-drawer-backdrop {
   transform: translateY(calc(var(--hero-progress, 0) * 16px));
 }
 
-.skills-page .intro-aside-single .micro-card {
-  display: grid;
-  grid-template-rows: auto auto 1fr;
-}
-
 .skills-page .intro-aside-single .micro-card .mini-list {
-  margin-top: 18px;
-  gap: 12px;
+  margin-top: 14px;
+  gap: 8px;
   align-content: start;
   padding-left: 1.15rem;
 }
 
 .skills-page .intro-aside-single .micro-card .mini-list li {
-  max-width: 26ch;
+  max-width: 100%;
   line-height: 1.38;
+}
+
+.projects-page .page-intro .lede {
+  max-width: 32ch;
+}
+
+.projects-page .intro-aside .micro-card h3 {
+  max-width: none;
+  white-space: nowrap;
+  font-size: 1.18rem;
+}
+
+.skills-page .page-intro-grid {
+  grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
+  align-items: start;
+}
+
+.skills-page .intro-aside-single .micro-card {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  align-content: start;
+  min-height: 0;
+}
+
+.skills-page .intro-aside-single {
+  align-self: start;
+}
+
+.skills-page .compact-intro h1 {
+  max-width: none;
+}
+
+.contact-page .page-shell {
+  row-gap: 14px;
+}
+
+.contact-card-based {
+  margin-bottom: 0;
+}
+
+.contact-card-open {
+  margin-top: -6px;
 }
 
 .skills-primary-grid > .skill-card[data-skill-group] {
@@ -1049,10 +1146,12 @@ html:not(.no-js) body.skills-enhanced .skills-primary-grid > .skill-card[data-sk
 
 .photo-panel img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   max-height: none;
-  aspect-ratio: auto;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center 18%;
   border-radius: calc(var(--radius-xl) - 10px);
   box-shadow: var(--shadow-sm);
 }
@@ -1212,6 +1311,7 @@ html:not(.no-js) body.skills-enhanced .skills-primary-grid > .skill-card[data-sk
 }
 
 .contact-item {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -1220,6 +1320,7 @@ html:not(.no-js) body.skills-enhanced .skills-primary-grid > .skill-card[data-sk
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.68);
   box-shadow: var(--shadow-sm);
+  isolation: isolate;
 }
 
 .contact-icon {
@@ -1231,6 +1332,32 @@ html:not(.no-js) body.skills-enhanced .skills-primary-grid > .skill-card[data-sk
   border-radius: 16px;
   color: var(--ink);
   background: linear-gradient(135deg, rgba(201, 104, 57, 0.12), rgba(47, 122, 126, 0.1));
+}
+
+.contact-item::before {
+  content: "";
+  position: absolute;
+  right: -18px;
+  bottom: -18px;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 104, 57, 0.14) 0%, transparent 74%);
+  opacity: 0.55;
+  transform: translateY(14px) scale(0.94);
+  transition:
+    opacity 0.36s ease,
+    transform 0.42s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 0;
+}
+
+.contact-item:nth-child(even)::before {
+  background: radial-gradient(circle, rgba(47, 122, 126, 0.16) 0%, transparent 74%);
+}
+
+.contact-item > * {
+  position: relative;
+  z-index: 1;
 }
 
 .contact-icon svg {
@@ -1250,6 +1377,61 @@ html:not(.no-js) body.skills-enhanced .skills-primary-grid > .skill-card[data-sk
 
 .contact-copy small {
   color: var(--muted);
+}
+
+.contact-page .contact-list {
+  gap: 12px;
+}
+
+.contact-page .contact-item {
+  transition:
+    transform 0.42s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.42s ease,
+    filter 0.42s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.contact-page .contact-item .contact-icon,
+.contact-page .contact-item .contact-copy {
+  transition: transform 0.36s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+html:not(.no-js) body.contact-enhanced .contact-item[data-contact-group] {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translate3d(var(--contact-origin-x, 0px), var(--contact-origin-y, 18px), 0) scale(0.96);
+  transition-delay: calc(var(--contact-index, 0) * 58ms);
+}
+
+html:not(.no-js) body.contact-enhanced .contact-item[data-contact-group].is-grouped {
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
+.contact-page .contact-item[data-contact-group].is-grouped:hover,
+.contact-page .contact-item[data-contact-group].is-grouped:focus-visible {
+  border-color: rgba(201, 104, 57, 0.22);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 16px 28px rgba(27, 36, 50, 0.09);
+}
+
+.contact-page .contact-item[data-contact-group].is-grouped:hover::before,
+.contact-page .contact-item[data-contact-group].is-grouped:focus-visible::before {
+  opacity: 0.82;
+  transform: translateY(0) scale(1);
+}
+
+.contact-page .contact-item[data-contact-group].is-grouped:hover .contact-icon,
+.contact-page .contact-item[data-contact-group].is-grouped:focus-visible .contact-icon {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.contact-page .contact-item[data-contact-group].is-grouped:hover .contact-copy,
+.contact-page .contact-item[data-contact-group].is-grouped:focus-visible .contact-copy {
+  transform: translateY(-1px);
 }
 
 
@@ -1511,12 +1693,29 @@ html:not(.no-js) .scroll-reveal-target.is-visible {
 
   .home-stage-hero {
     min-height: clamp(360px, 48svh, 430px);
+    justify-items: stretch;
   }
 
   .home-stage-copy h1 {
     font-size: clamp(2.85rem, 8.8vw, 4.55rem);
-    max-width: 13ch;
+    max-width: 7.2ch;
     line-height: 0.98;
+  }
+
+  .home-stage-copy {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .home-stage-caption {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero-line {
+    white-space: normal;
   }
 
   .home-intro-copy h2,
